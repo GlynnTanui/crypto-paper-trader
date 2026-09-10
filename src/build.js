@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { readJson, writeJson } from './storage.js';
 import { snapshot } from './publish.js';
 import { validateState } from './engine.js';
-import { iso } from './config.js';
+import { iso, hash } from './config.js';
 
 export async function build({ directory = 'runtime', output = 'dist', now = Date.now() } = {}) {
   const state = await readJson(join(directory, 'state.json'), { optional: true });
@@ -19,6 +19,15 @@ export async function build({ directory = 'runtime', output = 'dist', now = Date
   await cp('web', output, { recursive: true });
   await writeJson(join(output, 'data', 'snapshot.json'), snapshot(state, health));
   if (research) await writeJson(join(output, 'data', 'research.json'), research);
+  const fundingpips = await readJson(join('research', 'fundingpips', 'results.json'), { optional: true });
+  if (fundingpips) {
+    const expected = await readJson(join('research', 'fundingpips', 'results-hash.json'));
+    if (hash(fundingpips) !== expected.sha256 || fundingpips.account.initial !== 5000 ||
+      fundingpips.warning !== 'EXCHANGE-DATA PROXY - NOT VERIFIED FUNDINGPIPS PASS') {
+      throw new Error('Invalid frozen FundingPips research report');
+    }
+    await cp(join('research', 'fundingpips'), join(output, 'fundingpips'), { recursive: true });
+  }
   console.log(`Built public read-only dashboard in ${output}`);
 }
 

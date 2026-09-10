@@ -15,4 +15,6 @@ jobs:
         with:
           node-version: '22'
       - run: npm test
+      - name: Reproduce frozen FundingPips research from the real-data cache
+        run: npm run fundingpips:verify
       - run: npm run build

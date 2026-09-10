@@ -1,0 +1,29 @@
+[
+  {
+    "id": "A1",
+    "date": "2026-09-10",
+    "stage": "Data acquisition only; no candidate performance computed or inspected",
+    "reason": "Coinbase BTC-USD 900s API omits 2024-02-09 21:45 UTC even on a narrow repeat request. The same provider returns all three real 300s candles spanning the missing interval.",
+    "change": "For missing 15m source bars only, request three 5m Coinbase bars. Require exact complete timestamps, finite valid OHLCV; aggregate first open, max high, min low, last close and summed volume. Preserve source rows and repair metadata. If any 5m component is absent/invalid, abort with no interpolation. This is aggregation of real observations, not synthetic filling. Original protocol stays immutable.",
+    "unchanged": "All candidate families/parameters, costs, splits, ranking, evaluation and cohort rules. No performance-based data-window change."
+  },
+  {
+    "id": "A2",
+    "date": "2026-09-10",
+    "stage": "Data acquisition only; native tests use artificial fixtures, no candidate market performance computed or inspected",
+    "reason": "2024-05-31 22:15 UTC onward has a real Coinbase history outage also present in 5m/1m source. Rejecting all multi-year history would prevent broad real-data research.",
+    "change": "Retain sparse real observations and explicitly inventory gaps; no fabricated OHLC or carry-forward price bars. Align BTC/ETH on their timestamp intersection. Exclude ALL entries on any UTC date with a missing bar in either instrument, regardless of time or performance. Restart causal hourly indicators after each gap with the original 336h complete warmup. Incomplete hours cannot signal. Simulation may traverse gaps ONLY when flat; an unexpected position across a gap aborts. All results and cohort frequencies are conditional on this completeness-filtered sample and omit outage-date opportunities. Publish excluded dates and recovered bars. Freshness/invalid prices/duplicates remain fatal.",
+    "biasDisclosure": "Whole-day completeness is an ex-post data-quality exclusion (not live-deployable foresight). It can exclude volatile outage days and biases execution/compliance assessment. It is fixed before performance, not an optimized trading filter; no verified pass claim. Restored source bars under A1 do not count as excluded gaps.",
+    "unchanged": "All date splits, candidates, costs, ranking, targets and horizons remain fixed. No performance-based window selection."
+  },
+  {
+    "id": "A3",
+    "date": "2026-09-10",
+    "stage": "Before any real-market candidate performance computation; correction after methodology review",
+    "supersedes": "A2 whole-day entry exclusion, NOT its no-synthetic-data or explicit gap inventory requirements",
+    "reason": "Excluding a morning entry because a gap happens later that date uses future data availability. It must not be primary deployable-strategy evidence.",
+    "change": "Primary simulation is causal: retain all entries preceding a gap. An unavailable execution bar cannot fill new orders. Restart hourly indicators with 336 complete hours only AFTER an observable gap; do not exclude earlier hours of its date. If already open when an expected bar is missing, halt that run/cohort as data-indeterminate, preserve unresolved position/entry fee and last-known marked equity, never invent an exit or erase the trade. Flat gaps leave known cash unchanged. Explicitly reject data-indeterminate development paths from eligibility. Count indeterminate cohorts in all starts and report separately from pass/failure/pending/censoring. No whole-day-filtered performance is computed in this version.",
+    "biasDisclosure": "History has declared unavailable intervals. Primary results retain pre-gap activity and label unresolved open-gap paths indeterminate; gap-free prefix metrics are not full-period returns. Warmup restarts reduce subsequent opportunities. Complete real lower-timeframe repairs under A1 remain allowed.",
+    "unchanged": "Original candidates, costs, chronological splits, ranking formula, targets, all fixed stress/neighbor cases and horizons. A2 remains as superseded audit history, not current primary methodology."
+  }
+]

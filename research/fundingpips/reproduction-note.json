@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-10",
+  "stage": "Publication portability correction after final evaluation; not a strategy amendment",
+  "command": "npm run fundingpips:verify",
+  "implementation": "src/fundingpips/verify.js",
+  "reason": "The frozen results include checksums and sizes of compressed download files. Different OS/zlib versions can emit different gzip bytes for identical JSON evidence. The original strict study.js --verify command checks those transport bytes as well and is only portable between identical gzip implementations.",
+  "verification": "Recompute all original development/final/cohort paths with the unchanged locked engine. Verify the published gzip transport bytes against their published checksums. Require byte-identical UNCOMPRESSED JSON for every development/final/cohort archive, and deep equality of every report field except regenerated download transport metadata. Canonicalize only that verified transport metadata to the published bytes, then require the exact original report SHA256. No financial rounding or numerical tolerance is used.",
+  "unchanged": "Original protocol, amendments, all 16 candidate rules, source-locked data/signals/engine/study modules, development scores, pre-final selection.json, result values, original report SHA256 and original download files. No selection or performance result is revised.",
+  "frozenReportSha256": "f63897243de116f53cc4f20a1eb295f45a1fb4f0f6469aee84be19865118379c"
+}

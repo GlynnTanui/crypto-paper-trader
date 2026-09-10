@@ -3,6 +3,7 @@
 **PAPER ONLY. $10,000 virtual USD. No real orders, exchange accounts, API keys, deposits, or withdrawals.**
 
 [Open the dashboard](https://glynntanui.github.io/crypto-paper-trader/) |
+[FundingPips $5,000 research](https://glynntanui.github.io/crypto-paper-trader/fundingpips.html) |
 [Account controls and run history](https://github.com/GlynnTanui/crypto-paper-trader/actions/workflows/paper.yml) |
 [Public durable data](https://github.com/GlynnTanui/crypto-paper-trader/tree/paper-data)
 
@@ -79,6 +80,68 @@ The initial dataset has **8,790 bars per symbol**, including 150 warmup bars: **
 The exact full-precision report and the original public candles are versioned on `paper-data` as `research.json` and `research-candles.json`. Dataset SHA-256 (JSON-serialized market object): `1b05f9c3577a3d18e9ba6494df7f89825be83fc4cc9b048a4a9a8bcb66f47d5e`. Future explicitly requested research refreshes update the dashboard report, not this initial evaluation or the forward account. Data revisions may change a new provider fetch; use the committed cache for exact reproducibility.
 
 ## Run locally
+
+### Separate FundingPips Standard research
+
+**EXCHANGE-DATA PROXY - NOT VERIFIED FUNDINGPIPS PASS.** The [research page](https://glynntanui.github.io/crypto-paper-trader/fundingpips.html) publishes actual historical simulations of independent **$5,000** scenarios. They are not real FundingPips accounts or new live paper accounts. The original `PAPER-001`, its frozen parameters, $10,000 capital and disappointing initial research above remain unchanged. Research code never writes the `paper-data` account branch.
+
+The [preregistration](research/fundingpips/protocol.json) was committed as `5284f5d` before broad-history acquisition and any candidate performance inspection. Four hypotheses (hourly trend breakout, trend pullback, range reversion and session breakout), two coarse parameters each, and two small cost-inclusive risk budgets (0.10% / 0.25%) define **all 16 candidates**. Economic hypotheses are not evidence of intraday profitability; the cited time-series-momentum literature concerns different instruments/horizons. There is no search for a lucky challenge path or post-final winning parameter.
+
+**Result: none of the 16 candidates met the development criteria.** The development-only selection was committed as `b3a936e` before final execution. Its two diagnostic controls both lost money in the final window:
+
+| Final Jan 1-Jun 9, 2026 | Pullback, 2 ATR / 0.10% risk | Reversion, 2.5 sigma / 0.10% risk |
+| --- | ---: | ---: |
+| Net return / ending virtual equity | -0.7525% / $4,962.37 | -0.3128% / $4,984.36 |
+| Net profit factor / completed trades | 0.719 / 65 | 0.252 / 12 |
+| Net expectancy per trade | -$0.58 | -$1.30 |
+| Conservative intrabar DD / close DD | 1.171% / 1.120% | 0.466% / 0.456% |
+| Double-cost / triple-cost return | -1.160% / -1.506% | -0.385% / -0.446% |
+| 120-day base-cost two-phase scenarios | 0 passes, 6 pending, 17 censored | 0 passes, 15 inactivity, 3 pending, 5 censored |
+
+Each horizon/cost group contains 23 overlapping starts. Only **6** starts have a full 120-day calendar horizon (15 for 60 days). In the 120-day full-horizon subset, pullback has 6 pending and reversion 3 inactivity / 3 pending. Neither scenario reached a two-phase pass; these are not probability estimates. Final cash returned 0%; fully invested, costed BTC/ETH buy-and-hold returned -37.224%, at very different risk. Both controls' fixed-path break-even friction estimates are negative: even zero costs would not have produced a positive gross-mid result. No candidate is recommended or activated.
+
+The exact deterministic [report hash](research/fundingpips/results-hash.json) is `f63897243de116f53cc4f20a1eb295f45a1fb4f0f6469aee84be19865118379c`. The [full results](research/fundingpips/results.json), all development attempts and every predefined sensitivity remain published, including unfavorable results.
+
+| Window | Use |
+| --- | --- |
+| 2024-01-01 to 2025-07-01 | Development training |
+| 2025-07-01 to 2026-01-01 | Development validation and doubled-cost ranking |
+| 2026-01-01 to 2026-06-10 | Final, never previously used by this project (not universally blind) |
+| 2026-06-12 to 2026-09-10 | **Already-exposed** recent robustness context, never a fresh holdout |
+
+Dates are UTC, with exclusive endpoints. Real Coinbase BTC/ETH spot observations start on 2023-12-18 for warmup. Validated 15-minute candles supply completed UTC hourly indicators; entries occur only at the immediately following eligible 15-minute open. All variants, rejection reasons, fixed selection, final stress/neighbor cases, ledgers and provenance are downloadable. Two distinct families are selected using development only; if no family qualifies, the predeclared ranking supplies **ineligible diagnostic controls**, not recommended strategies. An open data-gap path is ineligible regardless of its prefix return.
+
+**Data gaps are not fabricated or hidden.** [Amendments](research/fundingpips/amendments.json) were committed before performance inspection. A1 allows a missing 15-minute candle to be reconstructed only from all three valid real Coinbase 5-minute source candles. A2 initially proposed whole-day completeness exclusions; **A3 supersedes that noncausal approach**. The primary simulation retains entries before an outage and resets the 336-hour indicator warmup only after missing data becomes observable. A flat gap leaves known cash unchanged. An open position at a gap halts its run/cohort as `data-indeterminate`, preserving unresolved inventory, entry fee and last-known marked equity without inventing an exit. Prefix metrics are not full-period returns. All affected cohorts remain counted. Missing timestamps, source repairs and gaps are public in the provenance; no interpolation or alternate exchange is used.
+
+The separate CFD-style engine models long/short unit quantities, one position total, deterministic BTC-before-ETH priority, net free margin and 90% of available leveraged buying power. Ordinary evaluation leverage is 2x; the additional current Master 1x run is **leverage sensitivity only**, not funded-account compliance. Mon-Thu entries are 06:00-16:00 UTC, Friday 06:00-14:00 (end exclusive); flat by 20:00 daily or 16:00 Friday, with family-specific 4/6/8-hour maximum holds. Those cutoffs are conservative assumptions, not verified broker sessions. Stop-first ambiguity, adverse opening gaps, both-direction spread/slippage and fees, and cost-inclusive sizing are explicit. Close drawdown and a conservative favorable-before-adverse intrabar drawdown **bound** are separate. The bound is not observed tick chronology. Managed runs add a 1% daily internal stop and persistent 6% close-peak-to-adverse-equity stop; economic runs do not halt to conceal later losses.
+
+| Per-side cost assumption | Commission | Half-spread | Adverse slippage | Total |
+| --- | ---: | ---: | ---: | ---: |
+| Base | 4 bps | 2 bps | 1 bp | 7 bps |
+| Double | 8 bps | 4 bps | 2 bps | 14 bps |
+| Triple | 12 bps | 6 bps | 3 bps | 21 bps |
+
+The published crypto commission formula is conservatively interpreted as **0.04% per side**; its actual side convention, lot/contract sizes, minimum/step, spreads, swaps and symbol inventory remain unverified. These are **proxy costs, not actual FundingPips execution costs**. Break-even all-in bps divides gross mid-price P&L by two-sided mid-price turnover on the fixed simulated trades; a negative value means even zero friction did not suffice. Repriced stress runs resize and can change fills, unlike that fixed-path diagnostic. Equal-dollar BTC/ETH buy-and-hold pays the same entry and final exit costs but is not day-trading or risk matched; cash earns zero.
+
+Official current new-purchase Standard rules were retrieved on **2026-09-10**; [Standard](https://help.fundingpips.com/hc/en-us/articles/34501809112081-2-Step-Standard) was updated at 08:46:42 UTC. Each phase starts at $5,000: phase 1 needs +$400 and phase 2 +$250, net realized and flat, with at least three assumed entry trading days each. Phase 2 begins on the subsequent UTC date after phase 1, without reusing its chronology; unknown administrative waiting is ignored. The fixed daily floor is 95% of `max(opening balance, opening equity)` at current UTC+3 midnight (21:00 UTC), not ratcheted on intraday profits; opening equity includes bid/ask proxy marks. Overall balance or equity touching $4,500 fails. Equity checks conservatively reserve liquidation costs. Fixed UTC+3 is counterfactually applied across history; historical DST and the firm's exact trading-day attribution are not verified. Thirty calendar days without a completed trade is inactivity.
+
+Weekly starting cohorts use the final window and 60/120-day **analytical horizons, not firm deadlines**. Pass, modeled breach, internal risk stop, inactivity, pending, right-censored and data-indeterminate are distinct. Failed/indeterminate paths cannot resume into a pass. Both all-start and fully observed horizon counts are shown, as are sequential phase timings. Overlapping cohorts are dependent scenarios: their fractions are **not future passing probabilities**.
+
+**Broker compliance stays indeterminate.** Spot OHLC is not CFD bid/ask or tick history. Actual minimum-lot/margin affordability on $5,000 is unknown. The authoritative historical news/speech calendar is unavailable; evaluation forbids deliberate news trading, and no verified news-compliance claim is made. Master event restrictions, temporary no-weekend-holding rule, idea-risk and payout requirements are distinct from evaluation. No payout cycle was selected. The page links all official rule sources and separately documents Master conditions; leverage sensitivity does not assess payouts. Zero swaps assume modeled early flat avoids an unverified rollover; crypto is not presumed swap-free.
+
+No purchase, credentials, real orders, funded-account automation, webhook or API permission is implied. Do not connect GitHub Actions to FundingPips: account-access restrictions and owned-EA requirements still apply. An independent manual forward-demo would require verified broker contract/news/session details and genuinely new observations before drawing stronger conclusions.
+
+Reproduce the separate published study from committed source and real-data cache (Node 22+, no dependencies):
+
+```powershell
+npm run fundingpips:verify
+```
+
+For an explicitly new research revision only, the separate acquisition/development/final commands are `npm run fundingpips:fetch`, `npm run fundingpips:development`, and `npm run fundingpips:final`. Development writes an immutable `selection.json` before final execution; changed source/data/development locks fail rather than silently reselecting. Final execution requires that exact lock. Reproduction uses a temporary directory and checks the deterministic report hash. Fetching uses incremental ignored `runtime/fundingpips-cache` pages; the gzip market archive and audit results live under `research/fundingpips/` on the source branch, **not** in the account's state. A refetch may revise provider data; use the committed archive for exact reproduction.
+
+The [portability note](research/fundingpips/reproduction-note.json) explains why the package verification command checks published gzip transport checksums separately from byte-identical **uncompressed** evidence: OS/zlib versions can compress identical JSON differently. Every financial/report field and every uncompressed ledger must match exactly, without rounding or tolerances. Only regenerated compressed-download metadata is canonicalized to the verified published files before checking the original report hash. The frozen report's older `study.js --verify` command is an additional strict transport-byte check for matching gzip implementations.
+
+### Original paper account commands
 
 Requires Node.js 22 or later. **No npm dependencies or install step.**
 

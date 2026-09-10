@@ -1,0 +1,4 @@
+{
+  "algorithm": "SHA256(JSON.stringify(parsed results.json))",
+  "sha256": "f63897243de116f53cc4f20a1eb295f45a1fb4f0f6469aee84be19865118379c"
+}
