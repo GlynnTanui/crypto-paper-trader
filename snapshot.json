@@ -1,10 +1,10 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-10T20:43:54.744Z",
-    "lastSuccessAt": "2026-09-10T20:43:54.744Z",
-    "marketAsOf": "2026-09-10T20:30:00.000Z",
-    "nextExpectedUpdate": "2026-09-10T20:52:00.000Z",
+    "generatedAt": "2026-09-10T21:33:06.800Z",
+    "lastSuccessAt": "2026-09-10T21:33:06.800Z",
+    "marketAsOf": "2026-09-10T21:30:00.000Z",
+    "nextExpectedUpdate": "2026-09-10T21:37:00.000Z",
     "status": "healthy",
     "message": "Public Coinbase data processed. Scheduled execution may be delayed.",
     "catchUp": "Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills."
@@ -25,7 +25,7 @@
     "paused": false,
     "riskHalt": null,
     "dayPnl": 0,
-    "lastProcessed": "2026-09-10T20:15:00.000Z"
+    "lastProcessed": "2026-09-10T21:15:00.000Z"
   },
   "config": {
     "symbols": [
@@ -52,21 +52,21 @@
   "market": [
     {
       "symbol": "BTC-USD",
-      "price": 77259.96,
-      "asOf": "2026-09-10T20:30:00.000Z",
+      "price": 77206.21,
+      "asOf": "2026-09-10T21:30:00.000Z",
       "signal": "WAIT",
-      "emaFast": 77202.15039828814,
-      "emaSlow": 77421.79277655759,
-      "atr": 208.23556679855847
+      "emaFast": 77212.60614658457,
+      "emaSlow": 77394.85839822602,
+      "atr": 177.10662719778972
     },
     {
       "symbol": "ETH-USD",
-      "price": 2465.67,
-      "asOf": "2026-09-10T20:30:00.000Z",
+      "price": 2460.86,
+      "asOf": "2026-09-10T21:30:00.000Z",
       "signal": "WAIT",
-      "emaFast": 2458.4308449842442,
-      "emaSlow": 2457.0003847961575,
-      "atr": 8.995394292560581
+      "emaFast": 2459.3026311250755,
+      "emaSlow": 2457.6332523301726,
+      "atr": 7.453523762442435
     }
   ],
   "positions": [],
@@ -77,9 +77,82 @@
       "equity": 10000,
       "cash": 10000,
       "drawdownPct": 0
+    },
+    {
+      "time": "2026-09-10T20:45:00.000Z",
+      "equity": 10000,
+      "cash": 10000,
+      "drawdownPct": 0
+    },
+    {
+      "time": "2026-09-10T21:00:00.000Z",
+      "equity": 10000,
+      "cash": 10000,
+      "drawdownPct": 0
+    },
+    {
+      "time": "2026-09-10T21:15:00.000Z",
+      "equity": 10000,
+      "cash": 10000,
+      "drawdownPct": 0
+    },
+    {
+      "time": "2026-09-10T21:30:00.000Z",
+      "equity": 10000,
+      "cash": 10000,
+      "drawdownPct": 0
     }
   ],
-  "decisions": [],
+  "decisions": [
+    {
+      "time": "2026-09-10T20:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T20:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T21:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T21:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T21:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T21:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T21:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-10T21:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    }
+  ],
   "activity": [
     {
       "time": "2026-09-10T20:39:38.977Z",
@@ -95,6 +168,11 @@
       "time": "2026-09-10T20:43:54.744Z",
       "level": "info",
       "message": "New entries resumed. Risk circuit breakers remain in force."
+    },
+    {
+      "time": "2026-09-10T21:33:06.800Z",
+      "level": "info",
+      "message": "Processed 4 closed 15-minute bar(s) as hypothetical replay; no real orders."
     }
   ]
 }
