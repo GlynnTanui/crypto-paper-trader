@@ -67,7 +67,7 @@ export function finalAssessment(finalist, metrics) {
 
 async function sourceHashes() {
   return Object.fromEntries(await Promise.all(engineFiles.map(async (file) => [
-    file, createHash('sha256').update(await readFile(new URL(file, import.meta.url))).digest('hex')
+    file, createHash('sha256').update((await readFile(new URL(file, import.meta.url), 'utf8')).replace(/\r\n/g, '\n')).digest('hex')
   ])));
 }
 
@@ -100,7 +100,7 @@ export async function developmentStudy({ directory = ROOT, dataDirectory = ROOT 
   const selection = {
     schemaVersion: 1, protocolId: protocol.id, protocolSha256: hash(protocol), marketSha256: provenance.marketSha256,
     amendmentsSha256: hash(provenance.amendments), developmentSha256: hash(development),
-    sourceSha256: await sourceHashes(), finalists: chooseFinalists(development),
+    sourceSha256: await sourceHashes(), sourceHashNormalization: 'UTF-8 source text with CRLF normalized to LF', finalists: chooseFinalists(development),
     eligibleCount: development.filter((r) => r.eligible).length,
     statement: 'Locked using development only before final execution; repeat execution reproduces this fixed decision, not a new selection.'
   };
