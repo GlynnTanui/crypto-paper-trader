@@ -1,0 +1,104 @@
+name: Paper account and Pages
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      control:
+        description: Account control (pause stops entries; existing protective/time exits remain managed)
+        type: choice
+        options: [evaluate, pause, resume]
+        default: evaluate
+      refresh_research:
+        description: Fetch a new 90-day historical report (does not change the forward account or strategy)
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: paper-account-and-pages
+  cancel-in-progress: false
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      evaluation: ${{ steps.evaluate.outcome }}
+      research: ${{ steps.research.outcome }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: paper-data
+          path: runtime
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - name: Optional frozen-strategy research
+        id: research
+        if: inputs.refresh_research == true
+        continue-on-error: true
+        run: npm run research
+      - name: Evaluate closed bars (fail closed)
+        id: evaluate
+        continue-on-error: true
+        env:
+          CONTROL: ${{ inputs.control || 'evaluate' }}
+        run: npm run simulate
+      - name: Validate ledger and build public dashboard
+        run: npm run build
+      - name: Persist account and audit history before deployment
+        working-directory: runtime
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add health.json
+          if [ -f state.json ]; then git add state.json; fi
+          if [ -f snapshot.json ]; then git add snapshot.json; fi
+          if [ -f research.json ]; then git add research.json research-candles.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Persist paper account (${SOURCE_SHA:0:7})" -m "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"
+            git push origin HEAD:paper-data
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: simulate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy read-only public Pages dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
+  report:
+    needs: [simulate, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Surface failed runs even when an error dashboard was deployed
+        env:
+          SIMULATION: ${{ needs.simulate.result }}
+          EVALUATION: ${{ needs.simulate.outputs.evaluation }}
+          RESEARCH: ${{ needs.simulate.outputs.research }}
+          DEPLOYMENT: ${{ needs.deploy.result }}
+        run: |
+          if [ "$SIMULATION" != success ] || [ "$EVALUATION" != success ] || [ "$RESEARCH" = failure ] || [ "$DEPLOYMENT" != success ]; then
+            echo "::error::Paper automation or deployment failed. Inspect job logs; account never falls back to synthetic data."
+            exit 1
+          fi
