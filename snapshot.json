@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-09-10T20:34:30.913Z",
+    "lastSuccessAt": null,
+    "marketAsOf": null,
+    "nextExpectedUpdate": "2026-09-10T20:49:30.913Z",
+    "status": "initializing",
+    "message": "Waiting for the first hosted Coinbase market-data run.",
+    "catchUp": "Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills."
+  },
+  "account": null,
+  "config": {
+    "symbols": [
+      "BTC-USD",
+      "ETH-USD"
+    ],
+    "intervalMinutes": 15,
+    "riskPerTrade": 0.0025,
+    "maxExposure": 0.5,
+    "maxPositionExposure": 0.25,
+    "maxPositions": 2,
+    "dailyLossLimit": 0.015,
+    "maxDrawdown": 0.08,
+    "feeRate": 0.001,
+    "slippageRate": 0.0005,
+    "emaFast": 20,
+    "emaSlow": 50,
+    "breakoutBars": 20,
+    "atrPeriod": 14,
+    "stopAtr": 2,
+    "targetR": 2,
+    "maxHoldBars": 16
+  },
+  "market": [],
+  "positions": [],
+  "fills": [],
+  "equityHistory": [],
+  "decisions": [],
+  "activity": []
+}

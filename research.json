@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-09-10T20:28:43.961Z",
+  "provider": "Coinbase Exchange",
+  "symbols": [
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "intervalMinutes": 15,
+  "parameters": {
+    "symbols": [
+      "BTC-USD",
+      "ETH-USD"
+    ],
+    "intervalMinutes": 15,
+    "riskPerTrade": 0.0025,
+    "maxExposure": 0.5,
+    "maxPositionExposure": 0.25,
+    "maxPositions": 2,
+    "dailyLossLimit": 0.015,
+    "maxDrawdown": 0.08,
+    "feeRate": 0.001,
+    "slippageRate": 0.0005,
+    "emaFast": 20,
+    "emaSlow": 50,
+    "breakoutBars": 20,
+    "atrPeriod": 14,
+    "stopAtr": 2,
+    "targetR": 2,
+    "maxHoldBars": 16
+  },
+  "parameterHash": "65b21b66e221290199d2654f60de029e835d3c27ef89a297dd10dfc13d9393b3",
+  "assessment": "No validated profitability: the untouched holdout lost money after modeled costs. This is an educational paper experiment, not a profitable trading recommendation.",
+  "methodology": "Frozen rules; 60/30-day chronological split for a 90-day sample. No parameter fitting or holdout selection. Independent $10,000 balances; 150 prior bars warmup per window. Signals at closed bars, earliest entry next open, adverse slippage and fees both sides, stop-first intrabar ordering, opening gaps, UTC session exits, terminal liquidation. Equal-weight fully invested BTC/ETH buy-and-hold uses identical costs; cash earns 0%. Candle-close drawdown only, not intrabar maximum. Stress reruns holdout with doubled fees and slippage, including cost-aware sizing.",
+  "data": {
+    "from": "2026-06-10T10:30:00.000Z",
+    "to": "2026-09-10T00:00:00.000Z",
+    "barsPerSymbol": {
+      "BTC-USD": 8790,
+      "ETH-USD": 8790
+    },
+    "sha256": "1b05f9c3577a3d18e9ba6494df7f89825be83fc4cc9b048a4a9a8bcb66f47d5e"
+  },
+  "split": {
+    "trainFrom": "2026-06-12T00:00:00.000Z",
+    "trainTo": "2026-08-11T00:00:00.000Z",
+    "holdoutFrom": "2026-08-11T00:00:00.000Z",
+    "holdoutTo": "2026-09-10T00:00:00.000Z"
+  },
+  "training": {
+    "from": "2026-06-12T00:00:00.000Z",
+    "to": "2026-08-11T00:00:00.000Z",
+    "startingBalance": 10000,
+    "endingEquity": 9186.31499291,
+    "netReturnPct": -8.136850070900003,
+    "maxDrawdownPct": 8.1368500709,
+    "tradeCount": 87,
+    "winRatePct": 18.39080459770115,
+    "profitFactor": 0.2948274899163058,
+    "totalFees": 386.78045615,
+    "cashReturnPct": 0,
+    "buyAndHoldReturnPct": 5.92530599950285,
+    "feeRate": 0.001,
+    "slippageRate": 0.0005,
+    "riskHalt": "max-drawdown"
+  },
+  "holdout": {
+    "from": "2026-08-11T00:00:00.000Z",
+    "to": "2026-09-10T00:00:00.000Z",
+    "startingBalance": 10000,
+    "endingEquity": 9249.13489997,
+    "netReturnPct": -7.508651000299993,
+    "maxDrawdownPct": 8.086606746566066,
+    "tradeCount": 132,
+    "winRatePct": 28.78787878787879,
+    "profitFactor": 0.5074679378620885,
+    "totalFees": 585.31474102,
+    "cashReturnPct": 0,
+    "buyAndHoldReturnPct": 26.78932411386605,
+    "feeRate": 0.001,
+    "slippageRate": 0.0005,
+    "riskHalt": "max-drawdown"
+  },
+  "stress": {
+    "from": "2026-08-11T00:00:00.000Z",
+    "to": "2026-09-10T00:00:00.000Z",
+    "startingBalance": 10000,
+    "endingEquity": 9191.15516136,
+    "netReturnPct": -8.088448386399993,
+    "maxDrawdownPct": 8.088448386399996,
+    "tradeCount": 88,
+    "winRatePct": 26.136363636363637,
+    "profitFactor": 0.32409404838649164,
+    "totalFees": 668.69711467,
+    "cashReturnPct": 0,
+    "buyAndHoldReturnPct": 26.409525459707027,
+    "feeRate": 0.002,
+    "slippageRate": 0.001,
+    "riskHalt": "max-drawdown"
+  }
+}
