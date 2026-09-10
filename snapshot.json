@@ -1,12 +1,12 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-10T20:43:17.237Z",
-    "lastSuccessAt": "2026-09-10T20:43:17.237Z",
+    "generatedAt": "2026-09-10T20:43:54.744Z",
+    "lastSuccessAt": "2026-09-10T20:43:54.744Z",
     "marketAsOf": "2026-09-10T20:30:00.000Z",
     "nextExpectedUpdate": "2026-09-10T20:52:00.000Z",
     "status": "healthy",
-    "message": "New entries paused; existing position exits remain managed.",
+    "message": "Public Coinbase data processed. Scheduled execution may be delayed.",
     "catchUp": "Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills."
   },
   "account": {
@@ -22,7 +22,7 @@
     "exposure": 0,
     "drawdownPct": 0,
     "maxDrawdownPct": 0,
-    "paused": true,
+    "paused": false,
     "riskHalt": null,
     "dayPnl": 0,
     "lastProcessed": "2026-09-10T20:15:00.000Z"
@@ -90,6 +90,11 @@
       "time": "2026-09-10T20:42:15.830Z",
       "level": "info",
       "message": "Paused new entries. Existing positions retain stops, targets, 4-hour and UTC session exits."
+    },
+    {
+      "time": "2026-09-10T20:43:54.744Z",
+      "level": "info",
+      "message": "New entries resumed. Risk circuit breakers remain in force."
     }
   ]
 }

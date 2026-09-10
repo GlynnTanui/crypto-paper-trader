@@ -16,7 +16,7 @@
   "day": "2026-09-10",
   "dayStartEquity": 10000,
   "dayPnl": 0,
-  "paused": true,
+  "paused": false,
   "riskHalt": null,
   "lastProcessed": "2026-09-10T20:15:00.000Z",
   "positions": [],
@@ -41,6 +41,11 @@
       "time": "2026-09-10T20:42:15.830Z",
       "level": "info",
       "message": "Paused new entries. Existing positions retain stops, targets, 4-hour and UTC session exits."
+    },
+    {
+      "time": "2026-09-10T20:43:54.744Z",
+      "level": "info",
+      "message": "New entries resumed. Risk circuit breakers remain in force."
     }
   ],
   "market": [
