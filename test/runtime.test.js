@@ -33,6 +33,7 @@ test('runtime persists clean initialization, reloads idempotently and publishes 
     assert.equal(output.positions.length, 0);
     assert.match(output.meta.catchUp, /Hypothetical/);
     assert.equal(output.meta.marketAsOf, '2026-01-03T12:00:00.000Z');
+    assert.equal(output.meta.nextExpectedUpdate, '2026-01-03T12:22:00.000Z');
     assert.equal(output.config.riskPerTrade, 0.0025);
     assert.equal(state.equityHistory.length, 1);
     await run({ directory, now: NOW + STEP, provider });
@@ -40,6 +41,13 @@ test('runtime persists clean initialization, reloads idempotently and publishes 
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
+});
+
+test('next expected update follows the offset UTC schedule, not the manual dispatch time', () => {
+  const output = snapshot(null, {
+    status: 'initializing', generatedAt: '2026-01-03T23:58:30.000Z', message: 'Waiting'
+  });
+  assert.equal(output.meta.nextExpectedUpdate, '2026-01-04T00:07:00.000Z');
 });
 
 test('network failure never advances bars or cash; authenticated pause persists and error publishes', async () => {

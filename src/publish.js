@@ -6,10 +6,12 @@ export function snapshot(state, health) {
       !Number.isFinite(Date.parse(health.generatedAt))) throw new Error('Invalid automation health');
   if (state) validateState(state);
   const marketAsOf = state?.lastProcessed ? iso(Date.parse(state.lastProcessed) + STEP) : null;
+  const scheduleOffset = 7 * 60_000;
+  const nextScheduled = (Math.floor((Date.parse(health.generatedAt) - scheduleOffset) / STEP) + 1) * STEP + scheduleOffset;
   return {
     meta: {
       schemaVersion: 1, generatedAt: health.generatedAt, lastSuccessAt: health.lastSuccessAt ?? null,
-      marketAsOf, nextExpectedUpdate: iso(Date.parse(health.generatedAt) + STEP),
+      marketAsOf, nextExpectedUpdate: iso(nextScheduled),
       status: health.status, message: health.message,
       catchUp: 'Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills.'
     },

@@ -30,13 +30,13 @@ jobs:
       evaluation: ${{ steps.evaluate.outcome }}
       research: ${{ steps.research.outcome }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: paper-data
           path: runtime
           fetch-depth: 1
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '22'
       - run: npm test
@@ -68,7 +68,7 @@ jobs:
             git commit -m "Persist paper account (${SOURCE_SHA:0:7})" -m "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"
             git push origin HEAD:paper-data
           fi
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: dist
   deploy:
@@ -84,7 +84,7 @@ jobs:
     steps:
       - name: Deploy read-only public Pages dashboard
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
   report:
     needs: [simulate, deploy]
     if: always()
