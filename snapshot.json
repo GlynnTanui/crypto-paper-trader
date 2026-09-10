@@ -1,12 +1,12 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-10T20:39:38.977Z",
-    "lastSuccessAt": "2026-09-10T20:39:38.977Z",
+    "generatedAt": "2026-09-10T20:42:15.830Z",
+    "lastSuccessAt": "2026-09-10T20:42:15.830Z",
     "marketAsOf": "2026-09-10T20:30:00.000Z",
-    "nextExpectedUpdate": "2026-09-10T20:54:38.977Z",
+    "nextExpectedUpdate": "2026-09-10T20:57:15.830Z",
     "status": "healthy",
-    "message": "Public Coinbase data processed. Scheduled execution may be delayed.",
+    "message": "New entries paused; existing position exits remain managed.",
     "catchUp": "Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills."
   },
   "account": {
@@ -22,7 +22,7 @@
     "exposure": 0,
     "drawdownPct": 0,
     "maxDrawdownPct": 0,
-    "paused": false,
+    "paused": true,
     "riskHalt": null,
     "dayPnl": 0,
     "lastProcessed": "2026-09-10T20:15:00.000Z"
@@ -85,6 +85,11 @@
       "time": "2026-09-10T20:39:38.977Z",
       "level": "info",
       "message": "New $10,000 virtual account initialized. Historical warmup generated no trades or profits."
+    },
+    {
+      "time": "2026-09-10T20:42:15.830Z",
+      "level": "info",
+      "message": "Paused new entries. Existing positions retain stops, targets, 4-hour and UTC session exits."
     }
   ]
 }

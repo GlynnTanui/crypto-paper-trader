@@ -1,6 +1,6 @@
 {
   "status": "healthy",
-  "generatedAt": "2026-09-10T20:39:38.977Z",
-  "lastSuccessAt": "2026-09-10T20:39:38.977Z",
-  "message": "Public Coinbase data processed. Scheduled execution may be delayed."
+  "generatedAt": "2026-09-10T20:42:15.830Z",
+  "lastSuccessAt": "2026-09-10T20:42:15.830Z",
+  "message": "New entries paused; existing position exits remain managed."
 }
