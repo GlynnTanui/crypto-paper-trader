@@ -6,5 +6,14 @@
     "reason": "Coinbase BTC-USD 900s API omits 2024-02-09 21:45 UTC even on a narrow repeat request. The same provider returns all three real 300s candles spanning the missing interval.",
     "change": "For missing 15m source bars only, request three 5m Coinbase bars. Require exact complete timestamps, finite valid OHLCV; aggregate first open, max high, min low, last close and summed volume. Preserve source rows and repair metadata. If any 5m component is absent/invalid, abort with no interpolation. This is aggregation of real observations, not synthetic filling. Original protocol stays immutable.",
     "unchanged": "All candidate families/parameters, costs, splits, ranking, evaluation and cohort rules. No performance-based data-window change."
+  },
+  {
+    "id": "A2",
+    "date": "2026-09-10",
+    "stage": "Data acquisition only; native tests use artificial fixtures, no candidate market performance computed or inspected",
+    "reason": "2024-05-31 22:15 UTC onward has a real Coinbase history outage also present in 5m/1m source. Rejecting all multi-year history would prevent broad real-data research.",
+    "change": "Retain sparse real observations and explicitly inventory gaps; no fabricated OHLC or carry-forward price bars. Align BTC/ETH on their timestamp intersection. Exclude ALL entries on any UTC date with a missing bar in either instrument, regardless of time or performance. Restart causal hourly indicators after each gap with the original 336h complete warmup. Incomplete hours cannot signal. Simulation may traverse gaps ONLY when flat; an unexpected position across a gap aborts. All results and cohort frequencies are conditional on this completeness-filtered sample and omit outage-date opportunities. Publish excluded dates and recovered bars. Freshness/invalid prices/duplicates remain fatal.",
+    "biasDisclosure": "Whole-day completeness is an ex-post data-quality exclusion (not live-deployable foresight). It can exclude volatile outage days and biases execution/compliance assessment. It is fixed before performance, not an optimized trading filter; no verified pass claim. Restored source bars under A1 do not count as excluded gaps.",
+    "unchanged": "All date splits, candidates, costs, ranking, targets and horizons remain fixed. No performance-based window selection."
   }
 ]
