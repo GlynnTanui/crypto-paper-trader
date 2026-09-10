@@ -1,0 +1,10 @@
+[
+  {
+    "id": "A1",
+    "date": "2026-09-10",
+    "stage": "Data acquisition only; no candidate performance computed or inspected",
+    "reason": "Coinbase BTC-USD 900s API omits 2024-02-09 21:45 UTC even on a narrow repeat request. The same provider returns all three real 300s candles spanning the missing interval.",
+    "change": "For missing 15m source bars only, request three 5m Coinbase bars. Require exact complete timestamps, finite valid OHLCV; aggregate first open, max high, min low, last close and summed volume. Preserve source rows and repair metadata. If any 5m component is absent/invalid, abort with no interpolation. This is aggregation of real observations, not synthetic filling. Original protocol stays immutable.",
+    "unchanged": "All candidate families/parameters, costs, splits, ranking, evaluation and cohort rules. No performance-based data-window change."
+  }
+]
