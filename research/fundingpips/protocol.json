@@ -1,0 +1,120 @@
+{
+  "id": "fp-standard-5k-v1",
+  "frozenAt": "2026-09-10",
+  "status": "Preregistered before fetching broad history or reading candidate performance",
+  "warning": "EXCHANGE-DATA PROXY - NOT VERIFIED FUNDINGPIPS PASS",
+  "account": {
+    "initial": 5000,
+    "phaseTargets": [0.08, 0.05],
+    "minimumTradingDays": 3,
+    "dailyLoss": 0.05,
+    "overallLoss": 0.10,
+    "evaluationLeverage": 2,
+    "masterLeverage": 1,
+    "inactivityDays": 30,
+    "platformOffsetHours": 3
+  },
+  "data": {
+    "provider": "Coinbase Exchange public spot OHLCV",
+    "symbols": ["BTC-USD", "ETH-USD"],
+    "barMinutes": 15,
+    "signalMinutes": 60,
+    "from": "2023-12-18T00:00:00.000Z",
+    "to": "2026-09-10T00:00:00.000Z",
+    "warmupHours": 336,
+    "missingPolicy": "Abort on missing, duplicate, invalid, unclosed or misaligned candles; no interpolation or synthetic fallback.",
+    "cachePolicy": "Immutable validated 250-bar pages, bounded provider retries, 150ms between requests; gzip complete cache for public reproduction."
+  },
+  "splits": {
+    "training": ["2024-01-01T00:00:00.000Z", "2025-07-01T00:00:00.000Z"],
+    "validation": ["2025-07-01T00:00:00.000Z", "2026-01-01T00:00:00.000Z"],
+    "final": ["2026-01-01T00:00:00.000Z", "2026-06-10T00:00:00.000Z"],
+    "exposed": ["2026-06-12T00:00:00.000Z", "2026-09-10T00:00:00.000Z"]
+  },
+  "exposureDisclosure": "June 10 through September 10 2026 was already exposed by the original research. Recent June 12-September 10 is robustness context only. Jan 1-June 9 2026 has not previously been used by this project, not a claim of universally blind data. Endpoints are exclusive. Current rules are counterfactually applied to all historical dates.",
+  "execution": {
+    "signals": "Only completed UTC 1h bars, aggregated from four validated 15m bars; SMA-seeded EMA20/80 and Wilder ATR14, continuous causal history with 336h minimum warmup. Orders eligible only at immediately following 15m open; no same-close fills.",
+    "portfolio": "One position total. BTC then ETH deterministic priority, never selected using future returns. Long and short unit-contract CFD proxy; quantity floored to 8 decimals, not verified broker lots.",
+    "hours": "Monday-Thursday entries 06:00 <= UTC < 16:00, Friday 06:00 <= UTC < 14:00. No weekend entries. Flat by 20:00 UTC each day and 16:00 Friday. Earlier Friday flat is an assumption, not verified server cutoff.",
+    "gapFilter": "Skip entry when absolute open minus signal close exceeds one signal ATR, or proposed stop is not beyond entry in loss direction.",
+    "risk": "Per-trade inclusive stop loss <= riskRate * min(initial capital, current equity). 90% of net available leveraged buying power, accounting for entry fee and opening liquidation spread/slippage/exit fee; single position. No pyramiding.",
+    "exit": "Fixed stop from signal close at stopAtr * ATR14. Target from actual entry at rewardRisk * distance to stop. Gap stops fill worse open, gap targets no improvement. Stop before target on ambiguous bar. Adverse exit spread/slippage and commission. Time exits on known bar close, terminal liquidation at final close.",
+    "riskPath": "Check balance and conservative liquidation equity at open before winners, entry, adverse reachable intrabar mark before stop/target, and close. Stop truncates continuous adverse path at stop, adverse opening gaps preserved. Entry-bar extrema order unknown; stop-first is pessimistic. One position avoids asynchronous cross-asset extrema.",
+    "drawdown": "Close DD uses close peaks. Intrabar DD is a conservative bound: a bar's favorable mark (capped at target when relevant) may precede its adverse mark (capped at stop); ordering unknown, so risk hits using such peaks are possible/indeterminate, not proven tick breaches.",
+    "internalDailyLoss": 0.01,
+    "internalDrawdown": 0.06,
+    "dayAttribution": "UTC+3 date of entry counts as an evaluation trading day; not verified platform attribution. Completed-trade dates also recorded. Daily baseline max(opening balance, opening equity), locked for day; both balance/equity touch tested. Fixed UTC+3 throughout, historical DST not verified.",
+    "swapAssumption": "Zero swaps because modeled exits precede assumed rollover; actual rollover and crypto swap schedule unknown. No claim of swap-free crypto or verified avoidance.",
+    "modes": "Economic standalone uses same cost-aware sizing without account/daily/DD halts to expose continuing losses. Managed standalone and challenge include internal daily stop and persistent 6% close-peak-to-adverse-equity halt, plus firm floors. No research writes to original account."
+  },
+  "costs": [
+    {"id": "base", "feePerSide": 0.0004, "halfSpread": 0.0002, "slippagePerSide": 0.0001},
+    {"id": "double", "feePerSide": 0.0008, "halfSpread": 0.0004, "slippagePerSide": 0.0002},
+    {"id": "triple", "feePerSide": 0.0012, "halfSpread": 0.0006, "slippagePerSide": 0.0003}
+  ],
+  "costDisclosure": "Published 0.04% crypto formula is interpreted PER SIDE conservatively; actual side convention, contract size, lot minimum/step, spreads, slippage, swaps and margin inventory unavailable. Spot candles are mid proxies, not CFD bid/ask. Stress is hypothetical, not actual FundingPips costs. Break-even all-in bps is exact on fixed simulated quantities/mid entry-exit paths, not a reoptimized trade set.",
+  "families": [
+    {"id": "breakout", "hypothesis": "Low-turnover directional continuation after range break; time-series momentum literature motivates hypothesis, not intraday crypto CFD profitability.", "parameters": [12, 24], "rule": "EMA20>EMA80 and close above prior N hourly highs -> long; inverse for short. Exclude signal bar from range. Stop 2 ATR; target 3R; max hold 8h.", "maxHoldHours": 8, "rewardRisk": 3},
+    {"id": "pullback", "hypothesis": "Enter established trend after temporary retracement, reducing breakout chasing; conjecture only.", "parameters": [1.5, 2], "rule": "EMA20>EMA80, prior close<=prior EMA20 and current close>EMA20 -> long; inverse for short. Stop N ATR; target 2R; max hold 8h.", "maxHoldHours": 8, "rewardRisk": 2},
+    {"id": "reversion", "hypothesis": "Temporary liquidity-driven overshoot in non-trending regimes; costs/adverse selection may dominate. Not a demonstrated edge.", "parameters": [2, 2.5], "rule": "abs(EMA20-EMA80)<=ATR14; prior close outside prior SMA20 +/- N population standard deviations and current close reenters its current band -> long from lower / short from upper. Stop 1.5 ATR; target 1.5R; max hold 4h.", "maxHoldHours": 4, "rewardRisk": 1.5},
+    {"id": "session", "hypothesis": "Expansion after an overnight range during liquid hours; session effect is conjectural, not news betting.", "parameters": [1.5, 2], "rule": "UTC 00:00-06:00 range width between 1 and 4 current ATR14; signal close time 07:00-12:00 inclusive crosses that range from inside -> long/short. Stop N ATR; target 2R; max hold 6h.", "maxHoldHours": 6, "rewardRisk": 2}
+  ],
+  "candidates": [
+    {"id": "breakout-12-r10", "family": "breakout", "parameter": 12, "riskRate": 0.001},
+    {"id": "breakout-12-r25", "family": "breakout", "parameter": 12, "riskRate": 0.0025},
+    {"id": "breakout-24-r10", "family": "breakout", "parameter": 24, "riskRate": 0.001},
+    {"id": "breakout-24-r25", "family": "breakout", "parameter": 24, "riskRate": 0.0025},
+    {"id": "pullback-1.5-r10", "family": "pullback", "parameter": 1.5, "riskRate": 0.001},
+    {"id": "pullback-1.5-r25", "family": "pullback", "parameter": 1.5, "riskRate": 0.0025},
+    {"id": "pullback-2-r10", "family": "pullback", "parameter": 2, "riskRate": 0.001},
+    {"id": "pullback-2-r25", "family": "pullback", "parameter": 2, "riskRate": 0.0025},
+    {"id": "reversion-2-r10", "family": "reversion", "parameter": 2, "riskRate": 0.001},
+    {"id": "reversion-2-r25", "family": "reversion", "parameter": 2, "riskRate": 0.0025},
+    {"id": "reversion-2.5-r10", "family": "reversion", "parameter": 2.5, "riskRate": 0.001},
+    {"id": "reversion-2.5-r25", "family": "reversion", "parameter": 2.5, "riskRate": 0.0025},
+    {"id": "session-1.5-r10", "family": "session", "parameter": 1.5, "riskRate": 0.001},
+    {"id": "session-1.5-r25", "family": "session", "parameter": 1.5, "riskRate": 0.0025},
+    {"id": "session-2-r10", "family": "session", "parameter": 2, "riskRate": 0.001},
+    {"id": "session-2-r25", "family": "session", "parameter": 2, "riskRate": 0.0025}
+  ],
+  "selection": {
+    "developmentCases": "All 16: economic baseline training, baseline validation, double-cost validation; plus managed baseline training/validation. Full trade/daily ledgers saved for every attempt, including failures.",
+    "eligibility": "Economic baseline training and validation each net positive, PF>=1.10; >=100 training and >=40 validation trades; both validation calendar quarters positive; double-cost validation positive; training and validation conservative intrabar DD<5%.",
+    "score": "min(annualized simple training return, annualized simple validation return, annualized simple double-cost validation return) / max(1, training intrabar DD%, validation intrabar DD%, double-cost validation intrabar DD%). Sort eligible first, descending score, then lexical candidate id.",
+    "finalists": "First two DISTINCT families in ranking, locked to selection.json before final execution. If fewer than two eligible families, fill remaining places with highest-ranked ineligible diagnostic controls. Never call these validated winners.",
+    "finalCases": "Each preselected finalist: economic base/double/triple, managed base, economic Master-1x sensitivity (not funded compliance), and its other preregistered parameter at same risk as nonselectable robustness neighbor. No final-winner selection. Recent exposed baseline economic context only.",
+    "rejection": "If no candidate clears development gates or final loses/net PF<1.10, report no credible usable strategy. Never optimize challenge pass rate or tune after final inspection."
+  },
+  "cohorts": {
+    "starts": "Every 7 calendar days from 2026-01-01T00:00:00Z while before final end; each uses only subsequent chronological data.",
+    "horizonDays": [60, 120],
+    "costCases": ["base", "double"],
+    "rules": "Managed strategy. Phase1 target +$400 realized net and flat, >=3 entry trading days. Phase2 starts at 00:00 UTC on subsequent UTC date, resets to $5000 without reuse of phase1 time. Phase2 target +$250 and >=3 days. No discretionary target flattening. Administrative waiting ignored/unknown.",
+    "outcomes": "pass, modeled breach, inactivity, internal risk stop, pending at analytical horizon, or right-censored at data end. Internal stop is not a firm breach. Target not reached is not automatically failure. Full observed horizons and all starts counted separately; halted phases never recover into a pass.",
+    "uncertainty": "Overlapping cohorts are dependent scenarios, not IID trials or future pass probabilities. Candle ambiguities remain conditional/indeterminate real compliance. Report phase target times, total time and outcome counts; no binomial confidence interval."
+  },
+  "sources": [
+    {"id": "S1", "title": "FundingPips Standard 2-Step", "url": "https://help.fundingpips.com/hc/en-us/articles/34501809112081-2-Step-Standard"},
+    {"id": "S2", "title": "Trading conduct / owned EA / access", "url": "https://help.fundingpips.com/hc/en-us/articles/34505029138449-Trading-Conduct-and-Security-Standards"},
+    {"id": "S3", "title": "News and weekend holding", "url": "https://help.fundingpips.com/hc/en-us/articles/34504137479441-News-Trading-Weekend-Holding"},
+    {"id": "S4", "title": "Risk per trade idea", "url": "https://help.fundingpips.com/hc/en-us/articles/48174287980177-Risk-Per-Trade-Idea"},
+    {"id": "S5", "title": "Pricing / commission / execution", "url": "https://help.fundingpips.com/hc/en-us/articles/44559256768529-Understanding-Trading-Mechanics"},
+    {"id": "S6", "title": "Account workspace / platforms", "url": "https://help.fundingpips.com/hc/en-us/articles/43468639481105-Account-Workspace"},
+    {"id": "S7", "title": "Reward methods", "url": "https://help.fundingpips.com/hc/en-us/articles/34504564970385-Reward-Methods"},
+    {"id": "S8", "title": "Master account setup", "url": "https://help.fundingpips.com/hc/en-us/articles/48636294148497-Master-Account-Setup"},
+    {"id": "S9", "title": "Responsible trading policy", "url": "https://help.fundingpips.com/hc/en-us/articles/47328410434065-Responsible-Trading-Policy"},
+    {"id": "H1", "title": "Moskowitz, Ooi, Pedersen (2012), Time series momentum. Monthly futures evidence, NOT evidence for these hourly crypto rules.", "url": "https://doi.org/10.1016/j.jfineco.2011.11.003"},
+    {"id": "D1", "title": "Coinbase candle API", "url": "https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-candles"}
+  ],
+  "limitations": [
+    "Official rules retrieved 2026-09-10; Standard updated 2026-09-10 08:46:42 UTC. Current new-purchase 8%/5%, not legacy 10%, Pro or Zero.",
+    "Historical authoritative news/speech calendar unavailable. Evaluation does not ban routine holding but deliberate news trading is prohibited. No event-targeted rules here, but news compliance cannot be verified.",
+    "Master news restriction conservatively treats USD events as affecting crypto: -5/+5min; speeches -10min to +10min after end; >=5h prior-entry exception. Not implemented without event data; Master sensitivity is leverage-only, NOT funded compliance.",
+    "Evaluation permits weekends; current Master weekend holding temporarily prohibited since 2026-01-29 including crypto. Strategy is weekday day-only with early Friday flat, not verified session mapping.",
+    "No payout cycle selected and no payout pass claim. Biweekly 80%/14d, weekly 60%/7d generally 1% minimum; on-demand 90% requires 2% and 35% best-day consistency; new monthly 100% has 35% consistency, seven >=0.5% profitable days and 1% idea-risk striking. Conditional Master rules are not evaluation requirements.",
+    "Current 8%-target $5000 Master normally exempt from size-based idea-risk striking except monthly choice. Same instrument/direction concurrent or losing reentry within 10min is one idea. Single-position hourly entries reduce grouping; no suggestion of evasion.",
+    "No verified maximum challenge deadline. 60/120-day horizons analytical only. No $25k+ profit-concentration rule or Zero largest-loss-day rule applied to $5000 Standard.",
+    "No real FundingPips account, purchase, credentials, orders, or API integration. Owned self-developed EA evidence required; third-party EA only risk management; VPN/VPS account access prohibited and API/webhook permission unverified. GitHub Actions must never connect to a FundingPips account.",
+    "The original PAPER-001 $10000 account and frozen failing research remain independent and unchanged. Nothing from this historical research becomes live."
+  ]
+}
