@@ -139,6 +139,8 @@ npm run fundingpips:verify
 
 For an explicitly new research revision only, the separate acquisition/development/final commands are `npm run fundingpips:fetch`, `npm run fundingpips:development`, and `npm run fundingpips:final`. Development writes an immutable `selection.json` before final execution; changed source/data/development locks fail rather than silently reselecting. Final execution requires that exact lock. Reproduction uses a temporary directory and checks the deterministic report hash. Fetching uses incremental ignored `runtime/fundingpips-cache` pages; the gzip market archive and audit results live under `research/fundingpips/` on the source branch, **not** in the account's state. A refetch may revise provider data; use the committed archive for exact reproduction.
 
+The [portability note](research/fundingpips/reproduction-note.json) explains why the package verification command checks published gzip transport checksums separately from byte-identical **uncompressed** evidence: OS/zlib versions can compress identical JSON differently. Every financial/report field and every uncompressed ledger must match exactly, without rounding or tolerances. Only regenerated compressed-download metadata is canonicalized to the verified published files before checking the original report hash. The frozen report's older `study.js --verify` command is an additional strict transport-byte check for matching gzip implementations.
+
 ### Original paper account commands
 
 Requires Node.js 22 or later. **No npm dependencies or install step.**

@@ -10,7 +10,7 @@
     "fundingpips:fetch": "node src/fundingpips/data.js",
     "fundingpips:development": "node src/fundingpips/study.js --development",
     "fundingpips:final": "node src/fundingpips/study.js --final",
-    "fundingpips:verify": "node src/fundingpips/study.js --verify",
+    "fundingpips:verify": "node src/fundingpips/verify.js",
     "simulate": "node src/run.js",
     "build": "node src/build.js"
   }
