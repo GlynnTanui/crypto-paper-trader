@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "fp-standard-5k-v1",
+  "protocolSha256": "e875ee07242335e856354d691dde73cafbaa96c485b9132ef2b2e7907faccd09",
+  "marketSha256": "87ee58c64631a0e98cf4fa1de489d263d920f4043a503105bc733412f7e353db",
+  "amendmentsSha256": "90230f31d2071eadb5ca73e99e940d0aa5d31fa929cdb2d2682b62f00fe479e7",
+  "developmentSha256": "3c0698d33ad46b4966781f4351d2adcd6708d8c6faad96f23c01807bfef8fa1c",
+  "sourceSha256": {
+    "data.js": "1805fcba8c940b10eca11b5c631ff51397ba0c5f7d4db3840ed2f2b868485b22",
+    "signals.js": "9f3ce8b80eb478fc32c30f7121d2a38a0e320a8ac5de8cb670fc700fc55943b7",
+    "engine.js": "5756639e3c33ce5c4571e972b41d2b2a4b7f00ce2962c312cbc91f253cb5eb9b",
+    "study.js": "45937e5a1064cfdd483bb4504d651af8e79a676ebdf2c4a159f13e2ad033e3cb"
+  },
+  "sourceHashNormalization": "UTF-8 source text with CRLF normalized to LF",
+  "finalists": [
+    {
+      "candidate": {
+        "id": "pullback-2-r10",
+        "family": "pullback",
+        "parameter": 2,
+        "riskRate": 0.001
+      },
+      "eligible": false,
+      "score": -0.596332422012528,
+      "role": "Ineligible diagnostic control - NOT a validated strategy"
+    },
+    {
+      "candidate": {
+        "id": "reversion-2.5-r10",
+        "family": "reversion",
+        "parameter": 2.5,
+        "riskRate": 0.001
+      },
+      "eligible": false,
+      "score": -0.6136428920427078,
+      "role": "Ineligible diagnostic control - NOT a validated strategy"
+    }
+  ],
+  "eligibleCount": 0,
+  "statement": "Locked using development only before final execution; repeat execution reproduces this fixed decision, not a new selection."
+}
