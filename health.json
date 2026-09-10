@@ -1,6 +1,6 @@
 {
-  "status": "initializing",
-  "generatedAt": "2026-09-10T20:34:30.913Z",
-  "lastSuccessAt": null,
-  "message": "Waiting for the first hosted Coinbase market-data run."
+  "status": "healthy",
+  "generatedAt": "2026-09-10T20:39:38.977Z",
+  "lastSuccessAt": "2026-09-10T20:39:38.977Z",
+  "message": "Public Coinbase data processed. Scheduled execution may be delayed."
 }

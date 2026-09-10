@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "configHash": "65b21b66e221290199d2654f60de029e835d3c27ef89a297dd10dfc13d9393b3",
+  "id": "PAPER-001",
+  "createdAt": "2026-09-10T20:39:38.977Z",
+  "startingBalance": 10000,
+  "cash": 10000,
+  "equity": 10000,
+  "realizedPnl": 0,
+  "unrealizedPnl": 0,
+  "totalFees": 0,
+  "exposure": 0,
+  "peakEquity": 10000,
+  "drawdownPct": 0,
+  "maxDrawdownPct": 0,
+  "day": "2026-09-10",
+  "dayStartEquity": 10000,
+  "dayPnl": 0,
+  "paused": false,
+  "riskHalt": null,
+  "lastProcessed": "2026-09-10T20:15:00.000Z",
+  "positions": [],
+  "pending": [],
+  "fills": [],
+  "equityHistory": [
+    {
+      "time": "2026-09-10T20:30:00.000Z",
+      "equity": 10000,
+      "cash": 10000,
+      "drawdownPct": 0
+    }
+  ],
+  "decisions": [],
+  "activity": [
+    {
+      "time": "2026-09-10T20:39:38.977Z",
+      "level": "info",
+      "message": "New $10,000 virtual account initialized. Historical warmup generated no trades or profits."
+    }
+  ],
+  "market": [
+    {
+      "symbol": "BTC-USD",
+      "price": 77259.96,
+      "asOf": "2026-09-10T20:30:00.000Z",
+      "signal": "WAIT",
+      "emaFast": 77202.15039828814,
+      "emaSlow": 77421.79277655759,
+      "atr": 208.23556679855847
+    },
+    {
+      "symbol": "ETH-USD",
+      "price": 2465.67,
+      "asOf": "2026-09-10T20:30:00.000Z",
+      "signal": "WAIT",
+      "emaFast": 2458.4308449842442,
+      "emaSlow": 2457.0003847961575,
+      "atr": 8.995394292560581
+    }
+  ]
+}
