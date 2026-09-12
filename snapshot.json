@@ -1,10 +1,10 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-12T05:00:43.400Z",
-    "lastSuccessAt": "2026-09-12T05:00:43.400Z",
-    "marketAsOf": "2026-09-12T04:45:00.000Z",
-    "nextExpectedUpdate": "2026-09-12T05:07:00.000Z",
+    "generatedAt": "2026-09-12T09:13:50.332Z",
+    "lastSuccessAt": "2026-09-12T09:13:50.332Z",
+    "marketAsOf": "2026-09-12T09:00:00.000Z",
+    "nextExpectedUpdate": "2026-09-12T09:22:00.000Z",
     "status": "healthy",
     "message": "Public Coinbase data processed. Scheduled execution may be delayed.",
     "catchUp": "Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills."
@@ -13,19 +13,19 @@
     "id": "PAPER-001",
     "startingBalance": 10000,
     "createdAt": "2026-09-10T20:39:38.977Z",
-    "cash": 9953.90619748,
-    "equity": 9953.90619748,
+    "cash": 7462.94118117,
+    "equity": 9951.04831357,
     "realizedPnl": -46.09380253,
-    "unrealizedPnl": 0,
-    "totalFees": 19.43871284,
-    "netReturnPct": -0.46093802519999727,
-    "exposure": 0,
-    "drawdownPct": 0.5569551881046418,
-    "maxDrawdownPct": 0.5569551881046418,
+    "unrealizedPnl": -2.85788391,
+    "totalFees": 21.92718938,
+    "netReturnPct": -0.4895168642999992,
+    "exposure": 2488.1071324,
+    "drawdownPct": 0.5855064595443276,
+    "maxDrawdownPct": 0.5855064595443276,
     "paused": false,
     "riskHalt": null,
-    "dayPnl": 0,
-    "lastProcessed": "2026-09-12T04:30:00.000Z"
+    "dayPnl": -2.85788391,
+    "lastProcessed": "2026-09-12T08:45:00.000Z"
   },
   "config": {
     "symbols": [
@@ -52,24 +52,37 @@
   "market": [
     {
       "symbol": "BTC-USD",
-      "price": 77240.4,
-      "asOf": "2026-09-12T04:45:00.000Z",
+      "price": 77340.73,
+      "asOf": "2026-09-12T09:00:00.000Z",
       "signal": "WAIT",
-      "emaFast": 77262.25016630703,
-      "emaSlow": 77318.23931295225,
-      "atr": 103.166293141487
+      "emaFast": 77274.95815075192,
+      "emaSlow": 77291.6050595591,
+      "atr": 68.92981666658356
     },
     {
       "symbol": "ETH-USD",
-      "price": 2512.9,
-      "asOf": "2026-09-12T04:45:00.000Z",
-      "signal": "WAIT",
-      "emaFast": 2515.1788746572697,
-      "emaSlow": 2519.6088958081405,
-      "atr": 5.665678756243309
+      "price": 2533.05,
+      "asOf": "2026-09-12T09:00:00.000Z",
+      "signal": "BUY SETUP",
+      "emaFast": 2521.415494744697,
+      "emaSlow": 2520.1190786294765,
+      "atr": 4.378395318932662
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "id": "ETH-USD:2026-09-12T08:45:00.000Z",
+      "symbol": "ETH-USD",
+      "quantity": 0.98225741,
+      "entryPrice": 2533.42608,
+      "entryTime": "2026-09-12T08:45:00.000Z",
+      "stop": 2523.5403748639646,
+      "target": 2553.19749027,
+      "entryFee": 2.48847654,
+      "markPrice": 2533.05,
+      "unrealizedPnl": -2.85788391
+    }
+  ],
   "fills": [
     {
       "id": "ETH-USD:2026-09-11T05:45:00.000Z:BUY",
@@ -210,6 +223,20 @@
       "realizedPnl": -25.00307563,
       "prevHash": "c39af72ee1c635d388d2a7e3a398999fb31d86272248e399c6ebf7ca187ae42b",
       "hash": "bfb9e8996674743f7ed669c79cd5e5a538988bcfffc6b95050ca1ca6a63be2de"
+    },
+    {
+      "id": "ETH-USD:2026-09-12T08:45:00.000Z:BUY",
+      "positionId": "ETH-USD:2026-09-12T08:45:00.000Z",
+      "time": "2026-09-12T08:45:00.000Z",
+      "symbol": "ETH-USD",
+      "side": "BUY",
+      "quantity": 0.98225741,
+      "price": 2533.42608,
+      "fee": 2.48847654,
+      "reason": "prior-closed-bar-breakout",
+      "realizedPnl": 0,
+      "prevHash": "bfb9e8996674743f7ed669c79cd5e5a538988bcfffc6b95050ca1ca6a63be2de",
+      "hash": "7f305008189b86833961077653291b91f75ed65640db9d45445f3a0f4a77152e"
     }
   ],
   "equityHistory": [
@@ -992,6 +1019,108 @@
       "equity": 9953.90619748,
       "cash": 9953.90619748,
       "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T05:00:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T05:15:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T05:30:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T05:45:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T06:00:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T06:15:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T06:30:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T06:45:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T07:00:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T07:15:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T07:30:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T07:45:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T08:00:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T08:15:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T08:30:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T08:45:00.000Z",
+      "equity": 9953.90619748,
+      "cash": 9953.90619748,
+      "drawdownPct": 0.5569551881046418
+    },
+    {
+      "time": "2026-09-12T09:00:00.000Z",
+      "equity": 9951.04831357,
+      "cash": 7462.94118117,
+      "drawdownPct": 0.5855064595443276
     }
   ],
   "decisions": [
@@ -2542,6 +2671,210 @@
       "symbol": "ETH-USD",
       "signal": "WAIT",
       "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T05:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T06:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T07:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T08:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BUY SETUP",
+      "reason": "EMA trend and 20-bar closing breakout"
+    },
+    {
+      "time": "2026-09-12T09:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-09-12T09:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BUY SETUP",
+      "reason": "EMA trend and 20-bar closing breakout"
     }
   ],
   "activity": [
@@ -2662,6 +2995,16 @@
     },
     {
       "time": "2026-09-12T05:00:43.400Z",
+      "level": "info",
+      "message": "Processed 17 closed 15-minute bar(s) as hypothetical replay; no real orders."
+    },
+    {
+      "time": "2026-09-12T08:45:00.000Z",
+      "level": "info",
+      "message": "ETH-USD simulated entry at next bar open (fees and adverse slippage included)"
+    },
+    {
+      "time": "2026-09-12T09:13:50.332Z",
       "level": "info",
       "message": "Processed 17 closed 15-minute bar(s) as hypothetical replay; no real orders."
     }
