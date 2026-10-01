@@ -4,47 +4,22 @@
   "id": "PAPER-001",
   "createdAt": "2026-09-10T20:39:38.977Z",
   "startingBalance": 10000,
-  "cash": 4669.38149059,
-  "equity": 9346.13384464,
-  "realizedPnl": -667.87897424,
-  "unrealizedPnl": 14.01281891,
-  "totalFees": 348.68793107,
-  "exposure": 4676.75235405,
+  "cash": 9297.15963266,
+  "equity": 9297.15963266,
+  "realizedPnl": -702.8403673,
+  "unrealizedPnl": 0,
+  "totalFees": 353.32034162,
+  "exposure": 0,
   "peakEquity": 10009.65549306,
-  "drawdownPct": 6.6288160354773344,
-  "maxDrawdownPct": 6.788806944566097,
+  "drawdownPct": 7.118085741252489,
+  "maxDrawdownPct": 7.118085741252489,
   "day": "2026-10-01",
   "dayStartEquity": 9332.12102573,
-  "dayPnl": 14.01281891,
+  "dayPnl": -34.96139307,
   "paused": false,
   "riskHalt": null,
-  "lastProcessed": "2026-10-01T05:45:00.000Z",
-  "positions": [
-    {
-      "id": "ETH-USD:2026-10-01T04:00:00.000Z",
-      "symbol": "ETH-USD",
-      "quantity": 0.86545809,
-      "entryPrice": 2695.717185,
-      "entryTime": "2026-10-01T04:00:00.000Z",
-      "stop": 2681.788174513203,
-      "target": 2723.57520597,
-      "entryFee": 2.33303025,
-      "markPrice": 2716.5,
-      "unrealizedPnl": 15.65362512
-    },
-    {
-      "id": "BTC-USD:2026-10-01T05:15:00.000Z",
-      "symbol": "BTC-USD",
-      "quantity": 0.02760451,
-      "entryPrice": 84227.222565,
-      "entryTime": "2026-10-01T05:15:00.000Z",
-      "stop": 83817.92124821416,
-      "target": 85045.82519857,
-      "entryFee": 2.32505121,
-      "markPrice": 84252.01,
-      "unrealizedPnl": -1.64080621
-    }
-  ],
+  "lastProcessed": "2026-10-01T13:15:00.000Z",
+  "positions": [],
   "pending": [],
   "fills": [
     {
@@ -2202,6 +2177,34 @@
       "realizedPnl": 0,
       "prevHash": "102d42f388c931855577f246e51d800b25222e86a49898d9d37b5a3e0303a2db",
       "hash": "e35588dd6e0d75a1138ce94ae22bd1c8bb7eb342eb6f61e4e280e6813e05aa8d"
+    },
+    {
+      "id": "ETH-USD:2026-10-01T04:00:00.000Z:SELL",
+      "positionId": "ETH-USD:2026-10-01T04:00:00.000Z",
+      "time": "2026-10-01T07:30:00.000Z",
+      "symbol": "ETH-USD",
+      "side": "SELL",
+      "quantity": 0.86545809,
+      "price": 2680.44728043,
+      "fee": 2.31981478,
+      "reason": "stop",
+      "realizedPnl": -17.86830747,
+      "prevHash": "e35588dd6e0d75a1138ce94ae22bd1c8bb7eb342eb6f61e4e280e6813e05aa8d",
+      "hash": "e2ba18a4964c5a79a9151d75760cf91f065f12d193a83243d5196e5e0a776e2b"
+    },
+    {
+      "id": "BTC-USD:2026-10-01T05:15:00.000Z:SELL",
+      "positionId": "BTC-USD:2026-10-01T05:15:00.000Z",
+      "time": "2026-10-01T07:30:00.000Z",
+      "symbol": "BTC-USD",
+      "side": "SELL",
+      "quantity": 0.02760451,
+      "price": 83776.01228759,
+      "fee": 2.31259577,
+      "reason": "stop",
+      "realizedPnl": -17.09308559,
+      "prevHash": "e2ba18a4964c5a79a9151d75760cf91f065f12d193a83243d5196e5e0a776e2b",
+      "hash": "3554f0ffdab6878ff503707df979a353a9568acfda274f6b1a83063ba94d49cb"
     }
   ],
   "equityHistory": [
@@ -13958,370 +13961,190 @@
       "equity": 9346.13384464,
       "cash": 4669.38149059,
       "drawdownPct": 6.6288160354773344
+    },
+    {
+      "time": "2026-10-01T06:15:00.000Z",
+      "equity": 9351.26836776,
+      "cash": 4669.38149059,
+      "drawdownPct": 6.577520332807454
+    },
+    {
+      "time": "2026-10-01T06:30:00.000Z",
+      "equity": 9350.77814985,
+      "cash": 4669.38149059,
+      "drawdownPct": 6.58241778317764
+    },
+    {
+      "time": "2026-10-01T06:45:00.000Z",
+      "equity": 9339.68923114,
+      "cash": 4669.38149059,
+      "drawdownPct": 6.693200004580648
+    },
+    {
+      "time": "2026-10-01T07:00:00.000Z",
+      "equity": 9339.02590912,
+      "cash": 4669.38149059,
+      "drawdownPct": 6.699826826257578
+    },
+    {
+      "time": "2026-10-01T07:15:00.000Z",
+      "equity": 9334.48109585,
+      "cash": 4669.38149059,
+      "drawdownPct": 6.745231118874355
+    },
+    {
+      "time": "2026-10-01T07:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T07:45:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T08:00:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T08:15:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T08:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T08:45:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T09:00:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T09:15:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T09:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T09:45:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T10:00:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T10:15:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T10:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T10:45:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T11:00:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T11:15:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T11:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T11:45:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T12:00:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T12:15:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T12:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T12:45:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T13:00:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T13:15:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
+    },
+    {
+      "time": "2026-10-01T13:30:00.000Z",
+      "equity": 9297.15963266,
+      "cash": 9297.15963266,
+      "drawdownPct": 7.118085741252489
     }
   ],
   "decisions": [
     {
-      "time": "2026-09-20T20:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T20:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T20:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T20:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T20:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T20:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T21:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T22:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-20T23:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T00:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "UTC session ended"
-    },
-    {
-      "time": "2026-09-21T00:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "UTC session ended"
-    },
-    {
-      "time": "2026-09-21T00:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BUY SETUP",
-      "reason": "EMA trend and 20-bar closing breakout"
-    },
-    {
-      "time": "2026-09-21T00:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BUY SETUP",
-      "reason": "EMA trend and 20-bar closing breakout"
-    },
-    {
-      "time": "2026-09-21T00:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BUY SETUP",
-      "reason": "EMA trend and 20-bar closing breakout"
-    },
-    {
-      "time": "2026-09-21T00:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T00:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T00:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T01:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T02:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T03:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T03:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T03:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T03:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T03:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
-      "time": "2026-09-21T03:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "WAIT",
-      "reason": "No qualifying breakout"
-    },
-    {
       "time": "2026-09-21T03:45:00.000Z",
       "symbol": "BTC-USD",
       "signal": "WAIT",
@@ -25957,6 +25780,366 @@
     },
     {
       "time": "2026-10-01T06:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T06:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BUY SETUP",
+      "reason": "EMA trend and 20-bar closing breakout"
+    },
+    {
+      "time": "2026-10-01T06:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BUY SETUP",
+      "reason": "EMA trend and 20-bar closing breakout"
+    },
+    {
+      "time": "2026-10-01T06:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T06:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T06:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T06:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T07:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T08:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T09:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T10:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T11:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T12:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T13:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T13:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T13:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T13:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T13:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "WAIT",
+      "reason": "No qualifying breakout"
+    },
+    {
+      "time": "2026-10-01T13:30:00.000Z",
       "symbol": "ETH-USD",
       "signal": "WAIT",
       "reason": "No qualifying breakout"
@@ -27377,26 +27560,41 @@
       "time": "2026-10-01T06:09:47.261Z",
       "level": "info",
       "message": "Processed 24 closed 15-minute bar(s) as hypothetical replay; no real orders."
+    },
+    {
+      "time": "2026-10-01T07:30:00.000Z",
+      "level": "info",
+      "message": "ETH-USD simulated exit: stop; net P&L $-17.87"
+    },
+    {
+      "time": "2026-10-01T07:30:00.000Z",
+      "level": "info",
+      "message": "BTC-USD simulated exit: stop; net P&L $-17.09"
+    },
+    {
+      "time": "2026-10-01T13:33:00.188Z",
+      "level": "info",
+      "message": "Processed 30 closed 15-minute bar(s) as hypothetical replay; no real orders."
     }
   ],
   "market": [
     {
       "symbol": "BTC-USD",
-      "price": 84252.01,
-      "asOf": "2026-10-01T06:00:00.000Z",
+      "price": 83439.4,
+      "asOf": "2026-10-01T13:30:00.000Z",
       "signal": "WAIT",
-      "emaFast": 83850.92959546154,
-      "emaSlow": 83764.01457631786,
-      "atr": 172.75750334939994
+      "emaFast": 83741.19563060808,
+      "emaSlow": 83748.7427166942,
+      "atr": 209.63772188534725
     },
     {
       "symbol": "ETH-USD",
-      "price": 2716.5,
-      "asOf": "2026-10-01T06:00:00.000Z",
+      "price": 2683.75,
+      "asOf": "2026-10-01T13:30:00.000Z",
       "signal": "WAIT",
-      "emaFast": 2698.376068375079,
-      "emaSlow": 2691.16509369692,
-      "atr": 6.296870358089977
+      "emaFast": 2694.9272932667377,
+      "emaSlow": 2693.544375077724,
+      "atr": 8.587702179763244
     }
   ]
 }
