@@ -1,10 +1,10 @@
 {
   "meta": {
     "schemaVersion": 1,
-    "generatedAt": "2026-10-28T19:50:38.146Z",
-    "lastSuccessAt": "2026-10-28T19:50:38.146Z",
-    "marketAsOf": "2026-10-28T19:45:00.000Z",
-    "nextExpectedUpdate": "2026-10-28T19:52:00.000Z",
+    "generatedAt": "2026-10-28T23:43:48.736Z",
+    "lastSuccessAt": "2026-10-28T23:43:48.736Z",
+    "marketAsOf": "2026-10-28T23:30:00.000Z",
+    "nextExpectedUpdate": "2026-10-28T23:52:00.000Z",
     "status": "healthy",
     "message": "Risk circuit breaker active: max-drawdown",
     "catchUp": "Hypothetical closed-bar replay. Delayed jobs replay historical bars; these are not contemporaneous executable fills."
@@ -25,7 +25,7 @@
     "paused": false,
     "riskHalt": "max-drawdown",
     "dayPnl": 0,
-    "lastProcessed": "2026-10-28T19:30:00.000Z"
+    "lastProcessed": "2026-10-28T23:15:00.000Z"
   },
   "config": {
     "symbols": [
@@ -52,21 +52,21 @@
   "market": [
     {
       "symbol": "BTC-USD",
-      "price": 81255.73,
-      "asOf": "2026-10-28T19:45:00.000Z",
-      "signal": "BUY SETUP",
-      "emaFast": 80812.65302177785,
-      "emaSlow": 80789.77279101334,
-      "atr": 234.63929613369092
+      "price": 81259.33,
+      "asOf": "2026-10-28T23:30:00.000Z",
+      "signal": "WAIT",
+      "emaFast": 81123.52170494915,
+      "emaSlow": 80980.34164701859,
+      "atr": 203.7853983273157
     },
     {
       "symbol": "ETH-USD",
-      "price": 2362.19,
-      "asOf": "2026-10-28T19:45:00.000Z",
+      "price": 2358.74,
+      "asOf": "2026-10-28T23:30:00.000Z",
       "signal": "WAIT",
-      "emaFast": 2345.1063194712,
-      "emaSlow": 2344.723646787276,
-      "atr": 9.228342816224723
+      "emaFast": 2355.38359795148,
+      "emaSlow": 2350.9300783736817,
+      "atr": 8.896348690186231
     }
   ],
   "positions": [],
@@ -30368,190 +30368,100 @@
       "equity": 9202.8944119,
       "cash": 9202.8944119,
       "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T20:00:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T20:15:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T20:30:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T20:45:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T21:00:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T21:15:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T21:30:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T21:45:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T22:00:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T22:15:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T22:30:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T22:45:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T23:00:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T23:15:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
+    },
+    {
+      "time": "2026-10-28T23:30:00.000Z",
+      "equity": 9202.8944119,
+      "cash": 9202.8944119,
+      "drawdownPct": 8.059828649640849
     }
   ],
   "decisions": [
     {
-      "time": "2026-10-18T10:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T10:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T11:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:45:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T12:45:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T13:00:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T13:00:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T13:15:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T13:15:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T13:30:00.000Z",
-      "symbol": "BTC-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
-      "time": "2026-10-18T13:30:00.000Z",
-      "symbol": "ETH-USD",
-      "signal": "BLOCKED",
-      "reason": "Risk halt: max-drawdown"
-    },
-    {
       "time": "2026-10-18T13:45:00.000Z",
       "symbol": "BTC-USD",
       "signal": "BLOCKED",
@@ -42367,6 +42277,186 @@
     },
     {
       "time": "2026-10-28T19:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T20:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T21:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:30:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:45:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T22:45:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T23:00:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T23:00:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T23:15:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T23:15:00.000Z",
+      "symbol": "ETH-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T23:30:00.000Z",
+      "symbol": "BTC-USD",
+      "signal": "BLOCKED",
+      "reason": "Risk halt: max-drawdown"
+    },
+    {
+      "time": "2026-10-28T23:30:00.000Z",
       "symbol": "ETH-USD",
       "signal": "BLOCKED",
       "reason": "Risk halt: max-drawdown"
@@ -44707,6 +44797,11 @@
       "time": "2026-10-28T19:50:38.146Z",
       "level": "info",
       "message": "Processed 22 closed 15-minute bar(s) as hypothetical replay; no real orders."
+    },
+    {
+      "time": "2026-10-28T23:43:48.736Z",
+      "level": "info",
+      "message": "Processed 15 closed 15-minute bar(s) as hypothetical replay; no real orders."
     }
   ]
 }
