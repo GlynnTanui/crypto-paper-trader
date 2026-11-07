@@ -1,6 +1,6 @@
 {
   "status": "healthy",
-  "generatedAt": "2026-11-06T20:50:31.738Z",
-  "lastSuccessAt": "2026-11-06T20:50:31.738Z",
+  "generatedAt": "2026-11-07T00:30:18.245Z",
+  "lastSuccessAt": "2026-11-07T00:30:18.245Z",
   "message": "Risk circuit breaker active: max-drawdown"
 }
